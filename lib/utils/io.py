@@ -20,13 +20,15 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import cPickle as pickle
+# import cPickle as pickle
+import pickle
 import hashlib
 import logging
 import os
 import re
 import sys
-import urllib2
+# import urllib2
+import urllib3
 
 logger = logging.getLogger(__name__)
 
@@ -111,7 +113,7 @@ def download_url(
     Credit:
     https://stackoverflow.com/questions/2028517/python-urllib2-progress-hook
     """
-    response = urllib2.urlopen(url)
+    response = urllib3.urlopen(url)
     total_size = response.info().getheader('Content-Length').strip()
     total_size = int(total_size)
     bytes_so_far = 0
@@ -140,5 +142,5 @@ def _get_file_md5sum(file_name):
 def _get_reference_md5sum(url):
     """By convention the md5 hash for url is stored in url + '.md5sum'."""
     url_md5sum = url + '.md5sum'
-    md5sum = urllib2.urlopen(url_md5sum).read().strip()
+    md5sum = urllib3.urlopen(url_md5sum).read().strip()
     return md5sum
