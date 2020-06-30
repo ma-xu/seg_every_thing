@@ -85,7 +85,8 @@ def generalized_rcnn(model):
         get_func(cfg.MODEL.CONV_BODY),
         add_roi_box_head_func=get_func(cfg.FAST_RCNN.ROI_BOX_HEAD),
         add_roi_mask_head_func=get_func(cfg.MRCNN.ROI_MASK_HEAD),
-        add_roi_keypoint_head_func=get_func(cfg.KRCNN.ROI_KEYPOINTS_HEAD),
+        # add_roi_keypoint_head_func=get_func(cfg.KRCNN.ROI_KEYPOINTS_HEAD),
+        add_roi_keypoint_head_func=None,
         freeze_conv_body=cfg.TRAIN.FREEZE_CONV_BODY
     )
 
@@ -139,10 +140,7 @@ def get_func(func_name):
         )
         func_name = new_func_name
     try:
-        try:
-            parts = func_name.split('.')
-        except:
-            parts = func_name.decode().split('.')
+        parts = func_name.split('.')
         # Refers to a function in this module
         if len(parts) == 1:
             return globals()[parts[0]]
