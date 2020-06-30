@@ -8,7 +8,7 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import cPickle as pickle
+import pickle
 import argparse
 import os
 import sys

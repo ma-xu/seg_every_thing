@@ -26,7 +26,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import argparse
-import cPickle as pickle
+import pickle
 import numpy as np
 import os
 import sys

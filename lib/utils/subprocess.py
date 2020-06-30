@@ -27,7 +27,7 @@ import os
 import yaml
 import numpy as np
 import subprocess
-import cPickle as pickle
+import pickle
 from six.moves import shlex_quote
 
 from core.config import cfg
