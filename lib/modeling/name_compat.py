@@ -14,19 +14,15 @@
 ##############################################################################
 
 """Handle mapping from old network building function names to new names.
-
 Flexible network configuration is achieved by specifying the function name that
 builds a network module (e.g., the name of the conv backbone or the mask roi
 head). However we may wish to change names over time without breaking previous
 config files. This module provides backwards naming compatibility by providing
 a mapping from the old name to the new name.
-
 When renaming functions, it's generally a good idea to codemod existing yaml
 config files. An easy way to batch edit, by example, is a shell command like
-
 $ find . -name "*.yaml" -exec sed -i -e \
    's/head_builder\.add_roi_2mlp_head/fast_rcnn_heads.add_roi_2mlp_head/g' {} \;
-
 to perform the renaming:
   head_builder.add_roi_2mlp_head => fast_rcnn_heads.add_roi_2mlp_head
 """
