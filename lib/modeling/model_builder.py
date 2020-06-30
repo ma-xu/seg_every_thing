@@ -139,7 +139,7 @@ def get_func(func_name):
         )
         func_name = new_func_name
     try:
-        parts = func_name.decode().split('.')
+        parts = func_name.split(b'.')
         # Refers to a function in this module
         if len(parts) == 1:
             return globals()[parts[0]]
