@@ -80,6 +80,7 @@ def generalized_rcnn(model):
       - Mask R-CNN (stagewise training from NIPS paper)
       - Mask R-CNN (end-to-end joint training)
     """
+    print("cfg.KRCNN.ROI_KEYPOINTS_HEAD: {}".format(cfg.KRCNN.ROI_KEYPOINTS_HEAD))
     return build_generic_detection_model(
         model,
         get_func(cfg.MODEL.CONV_BODY),
@@ -139,8 +140,6 @@ def get_func(func_name):
         )
         func_name = new_func_name
     try:
-        print("func_name: {}".format(func_name))
-        print("type: {}".format(type(func_name)))
         parts = func_name.split('.')
         # Refers to a function in this module
         if len(parts) == 1:
