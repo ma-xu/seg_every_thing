@@ -22,7 +22,7 @@
 
 """Python implementation of the PASCAL VOC devkit's AP evaluation code."""
 
-import cPickle
+import pickle
 import logging
 import numpy as np
 import os
@@ -137,11 +137,11 @@ def voc_eval(detpath,
         # save
         logger.info('Saving cached annotations to {:s}'.format(cachefile))
         with open(cachefile, 'w') as f:
-            cPickle.dump(recs, f)
+            pickle.dump(recs, f)
     else:
         # load
         with open(cachefile, 'r') as f:
-            recs = cPickle.load(f)
+            recs = pickle.load(f)
 
     # extract gt objects for this class
     class_recs = {}
