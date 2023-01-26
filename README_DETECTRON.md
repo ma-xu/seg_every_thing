@@ -115,3 +115,6 @@ If bugs are found, **we appreciate pull requests** (including adding Q&A's to `F
   IEEE International Conference on Computer Vision (ICCV), 2015.
   
   能帮我把 https://drive.google.com/drive/folders/1MYZq6DPK6xemSM1yBz3UkwRvBW9rot5q 里面的所有文件下载到~/canqin/DA/SegDA这个目录下么
+  
+  需要下载的文件夹(1) https://drive.google.com/drive/folders/1MYZq6DPK6xemSM1yBz3UkwRvBW9rot5q
+  需要下载的文件夹(2) https://drive.google.com/drive/folders/1x6_f6vJWIMD82XIaq-A70T0xXTw2BKu6
